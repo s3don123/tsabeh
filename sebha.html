@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>سبحة إلكترونية</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    user-select: none;
+  }
+  h1 {
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 1.2px;
+  }
+  #counter {
+    font-size: 5rem;
+    margin: 40px 0;
+    font-weight: 900;
+    text-shadow: 2px 2px 5px #000000aa;
+  }
+  button {
+    background: #007acc;
+    border: none;
+    padding: 15px 40px;
+    margin: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow:
+      4px 4px 8px #004f7c,
+      -4px -4px 8px #0091ff;
+    color: white;
+    transition: background 0.3s ease, transform 0.1s ease;
+  }
+  button:active {
+    transform: scale(0.95);
+    background: #005f99;
+    box-shadow:
+      inset 2px 2px 5px #004f7c,
+      inset -2px -2px 5px #0091ff;
+  }
+</style>
+</head>
+<body>
+
+<h1>سبحة إلكترونية</h1>
+
+<div id="counter">0</div>
+
+<button id="countBtn">اضغط للعد</button>
+<button id="resetBtn">إعادة الضبط</button>
+
+<script>
+  const counter = document.getElementById('counter');
+  const countBtn = document.getElementById('countBtn');
+  const resetBtn = document.getElementById('resetBtn');
+
+  let count = 0;
+
+  countBtn.addEventListener('click', () => {
+    count++;
+    counter.textContent = count;
+  });
+
+  resetBtn.addEventListener('click', () => {
+    count = 0;
+    counter.textContent = count;
+  });
+</script>
+
+</body>
+</html>
